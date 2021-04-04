@@ -33,6 +33,7 @@
       <h1>Abra uma conta</h1>
       <h2 class="quick-easy">É rápido e fácil.</h2>
       <form class="form-cadastro" action="">
+        <div class="validateError">Campos inválidos</div>
         <div class="input-name">
         <input type="text" name="firstname" placeholder="Nome">
         <input type="text" name="lastname" placeholder="Sobrenome">
@@ -42,7 +43,7 @@
       <label for="" id="label-birthdate">Data de nascimento</label>
       <input type="text" name="birthdate" placeholder="dd/mm/aaaa">
       <label for="" id="label-gender">Gênero</label>
-      <div class="buttons">
+      <div class="buttons" id="radio-gender">
         <label for="fem">
           <input type="radio" name="gender" id="fem" value="Feminino">Feminino
         </label>

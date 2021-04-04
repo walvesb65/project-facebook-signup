@@ -33,3 +33,31 @@ function validateRadios() {
 }
 
 const buttonRegister = document.getElementById('facebook-register');
+
+/* Adicione um novo campo de texto no formulário se a pessoa usuária selecionar a opção Personalizado no campo Gênero */
+
+const radioFemale = document.getElementById('fem');
+const radioMale = document.getElementById('masc');
+const radioCustomized = document.getElementById('person');
+const divInputCustomized = document.getElementById('customized-container');
+
+function selectCustomized() {
+  const inputCustomized = document.createElement('input');
+  inputCustomized.type = 'text';
+  inputCustomized.name = 'gender-custom';
+  inputCustomized.placeholder = 'Gênero (opcional)';
+  inputCustomized.id = 'input-customized';
+  divInputCustomized.appendChild(inputCustomized);
+}
+
+function removeCustomized() {
+  const inputCustomized = document.getElementById('input-customized');
+  if (inputCustomized) {
+    divInputCustomized.removeChild(inputCustomized);
+  }
+}
+radioCustomized.addEventListener('change', selectCustomized);
+
+radioFemale.addEventListener('change', removeCustomized);
+
+radioMale.addEventListener('change', removeCustomized);
